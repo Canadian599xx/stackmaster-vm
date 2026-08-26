@@ -9,7 +9,7 @@ The VM lets you interactively build a small "program" made up of instructions (`
 On startup, it repeatedly prompts:
 
 ```
-which operation would you like to do? 1 for PUSH, 2 for POP, 3 for ADD, else exit
+which operation would you like to do? 1 for PUSH, 2 for POP, 3 for ADD, 4 for SUB, else exit
 ```
 
 Entering `1` (PUSH) also prompts for a value to push. Entering anything other than `1`, `2`, or `3` ends input and runs the program you built. Up to 10 instructions can be entered.
