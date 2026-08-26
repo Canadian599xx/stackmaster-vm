@@ -4,7 +4,7 @@ A tiny stack-based virtual machine written in C, built to explore the core ideas
 
 ## What it does
 
-The VM lets you interactively build a small "program" made up of instructions (`PUSH`, `POP`, `ADD`), then executes them one at a time against an internal stack — similar in spirit to how a real CPU or a bytecode interpreter (like the JVM) operates.
+The VM lets you interactively build a small "program" made up of instructions (`PUSH`, `POP`, `ADD`, `SUB`), then executes them one at a time against an internal stack — similar in spirit to how a real CPU or a bytecode interpreter (like the JVM) operates.
 
 On startup, it repeatedly prompts:
 
@@ -47,7 +47,7 @@ Follow the prompts to build your program, then see the final top-of-stack value 
 
 ## Possible next steps
 
-- Additional opcodes (`SUB`, `MUL`, `JMP`, `PRINT`)
+- Additional opcodes (`MUL`, `JMP`, `PRINT`)
 - A simple text-based assembler so programs can be written as strings instead of typed in interactively
 - Bounds-checking on the value stack itself (currently only the instruction array is guarded)
 - Step-by-step execution tracing/printing
