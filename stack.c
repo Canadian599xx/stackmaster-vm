@@ -64,23 +64,40 @@ int main(void){
     box.sp = 0;
     box.pc = 0;
     int i = 0;
+    int decision = 1;
 
-    box.instruct[i].op = PUSH;
-    box.instruct[i].value = 9;
-    i++;
-    box.instruct[i].op = PUSH;
-    box.instruct[i].value = 2;
-    i++;
-    box.instruct[i].op = POP;
-    i++;
-    box.instruct[i].op = PUSH;
-    box.instruct[i].value = 1;
-    i++;
-    box.instruct[i].op = ADD;
-    i++;
+    while (i < 10 && (decision == 1 || decision == 2 || decision == 3 )){
+        printf("which operation would you like to do? 1 for PUSH, 2 for POP, 3 for ADD, else exit\n");
+        scanf("%d", &decision);
 
+        if (decision == 1)
+        {
+            box.instruct[i].op = PUSH;
+            printf("which value would you like to add?\n");
+            scanf("%d", &box.instruct[i].value);
+            i++;
+        }
+    
+        else if (decision == 2)
+        {
+            box.instruct[i].op = POP;
+            i++;
+        }
+    
+        else if (decision == 3)
+        {
+            box.instruct[i].op = ADD;
+            i++;
+        }
+        
+    }
+    printf("\n");
+    
+    
     box.instruction_count = i;
-
     run(&box);
-    printf("%d\n", box.stack[box.sp-1]);
+
+    for ( int j = 0; j < box.sp; j++){
+            printf("%d, ", box.stack[j]);
+            }
 }
